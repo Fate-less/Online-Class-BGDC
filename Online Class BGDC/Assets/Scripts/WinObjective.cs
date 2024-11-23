@@ -20,11 +20,11 @@ public class WinObjective : MonoBehaviour
         {
             if(playerSide == "Player 1")
             {
-                scoreManager.scoreP2 += 1;
+                scoreManager.ChangeScore(1,2);
             }
             else
             {
-                scoreManager.scoreP1 += 1;
+                scoreManager.ChangeScore(1,1);
             }
             scoreManager.changeMapCounter += 1;
             ballMovementScript.ResetPosition();

@@ -3,7 +3,10 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     public float launchSpeed = 10f; // Set a speed for the ball
+    public float speedIncrease;
     private Rigidbody2D rb;
+    public float newVelocityX;
+    public float newVelocityY;
 
     void Start()
     {
@@ -13,7 +16,8 @@ public class BallMovement : MonoBehaviour
 
     public void ResetPosition()
     {
-        gameObject.transform.position = new Vector2(0, 0);
+        transform.position = new Vector3(0,0,0);
+        LaunchBall();
     }
 
     void LaunchBall()
@@ -23,5 +27,12 @@ public class BallMovement : MonoBehaviour
 
         // Set the velocity of the ball in a random direction (up and to the side)
         rb.velocity = new Vector2(randomDirection, Random.Range(-1f, 1f)).normalized * launchSpeed;
+    }
+
+    public void SpeedIncreaseOnParry()
+    {
+        Vector2 newVelocity = rb.velocity.normalized;
+        float newSpeed = rb.velocity.magnitude + speedIncrease;
+        rb.velocity = newVelocity * newSpeed;
     }
 }

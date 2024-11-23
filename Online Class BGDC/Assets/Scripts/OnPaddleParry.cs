@@ -5,6 +5,7 @@ using UnityEngine;
 public class OnPaddleParry : MonoBehaviour
 {
     public BallAnimation ballAnim;
+    public BallMovement ballMovement;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -12,6 +13,7 @@ public class OnPaddleParry : MonoBehaviour
         {
             Debug.Log(collision.gameObject.name);
             ballAnim.playDoubleBounce();
+            ballMovement.SpeedIncreaseOnParry();
         }
     }
 }
