@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
-    public float gold;
+    public float gold = 0;
     public static CurrencyManager instance;
 
     public void Awake()
@@ -19,5 +19,16 @@ public class CurrencyManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        gold = PlayerPrefs.GetFloat("Gold Currency", 0);
+    }
+
+    public void ChangeCurrency(int increment)
+    {
+        gold += increment;
+        PlayerPrefs.SetFloat("Gold Currency", gold);
     }
 }

@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class MainmenuButtons : MonoBehaviour
+public class MainmenuButtons : MonoBehaviour, IPointerEnterHandler
 {
-    //public Button startButton;
+    public GameObject[] allMenuContents;
+    public GameObject menuContent;
 
-    public void MoveToGameplay()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        SceneManager.LoadScene("Default theme");
+        for(int i = 0; i < allMenuContents.Length; i++)
+        {
+            allMenuContents[i].SetActive(false);
+        }
+        menuContent.SetActive(true);
     }
+
+    
 }
