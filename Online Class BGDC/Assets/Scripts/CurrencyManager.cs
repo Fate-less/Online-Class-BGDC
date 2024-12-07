@@ -26,7 +26,7 @@ public class CurrencyManager : MonoBehaviour
         gold = PlayerPrefs.GetFloat("Gold Currency", 0);
     }
 
-    public void ChangeCurrency(int increment)
+    public void ChangeCurrency(float increment)
     {
         gold += increment;
         PlayerPrefs.SetFloat("Gold Currency", gold);
