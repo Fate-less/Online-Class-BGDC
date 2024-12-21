@@ -26,46 +26,47 @@ public class ShopSkinButton : MonoBehaviour
 
     private void Update()
     {
-        if(rareSkinStatus == "own" || currencyManager.gold < buySkin.rareSkinPrice)
+        if(rareSkinStatus == "own")
         {
             rareSkinButton.interactable = false;
+            rareSkinStatusTMP.SetActive(true);
+            rareSkinLock.SetActive(false);
+        }
+        else
+        {
             if (currencyManager.gold < buySkin.rareSkinPrice)
             {
+                rareSkinButton.interactable = false;
                 rareSkinLock.SetActive(true);
                 rareSkinStatusTMP.SetActive(false);
             }
             else
             {
-                rareSkinStatusTMP.SetActive(true);
+                rareSkinButton.interactable = true;
                 rareSkinLock.SetActive(false);
+                rareSkinStatusTMP.SetActive(false);
             }
-
+        }
+        if (legendSkinStatus == "own")
+        {
+            legendSkinButton.interactable = false;
+            legendSkinStatusTMP.SetActive(true);
+            legendSkinLock.SetActive(false);
         }
         else
         {
-            rareSkinButton.interactable = true;
-            rareSkinLock.SetActive(false);
-            rareSkinStatusTMP.SetActive(false);
-        }
-        if (legendSkinStatus == "own" || currencyManager.gold < buySkin.legendSkinPrice)
-        {
-            legendSkinButton.interactable = false;
             if (currencyManager.gold < buySkin.legendSkinPrice)
             {
+                legendSkinButton.interactable = false;
                 legendSkinLock.SetActive(true);
                 legendSkinStatusTMP.SetActive(false);
             }
             else
             {
-                legendSkinStatusTMP.SetActive(true);
+                legendSkinButton.interactable = true;
                 legendSkinLock.SetActive(false);
+                legendSkinStatusTMP.SetActive(false);
             }
-        }
-        else
-        {
-            legendSkinButton.interactable = true;
-            legendSkinLock.SetActive(false);
-            legendSkinStatusTMP.SetActive(false);
         }
     }
 }
