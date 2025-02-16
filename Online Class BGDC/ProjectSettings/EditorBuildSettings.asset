@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Mainmenu.unity
     guid: 6f5155c5d983c974bb8c41310d71a73d
   - enabled: 1
-    path: Assets/Scenes/Default theme.unity
+    path: Assets/Scenes/Singleplayer/Default theme.unity
+    guid: a1e67259458c1244485c8cde3cfc9b34
+  - enabled: 1
+    path: Assets/Scenes/Singleplayer/Dark theme.unity
+    guid: 36d2d9abd373bb04ca718b31b757b97f
+  - enabled: 1
+    path: Assets/Scenes/MP Default theme.unity
     guid: 287e8f99506f6914fb0cff9aafb569c4
   - enabled: 1
-    path: Assets/Scenes/Dark theme.unity
+    path: Assets/Scenes/MP Dark theme.unity
     guid: fe5212e94daac804db3c842bb4d0ca2d
   m_configObjects: {}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chase : MonoBehaviour
+public class Chase : State
 {
     public float speed;
     public Vector2 movement;

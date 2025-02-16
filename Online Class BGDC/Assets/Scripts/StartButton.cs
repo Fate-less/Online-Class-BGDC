@@ -7,6 +7,10 @@ public class StartButton : MonoBehaviour
 {
     public void MoveToMultiplayer()
     {
+        SceneManager.LoadScene("MP Default theme");
+    }
+    public void MoveToSingleplayer()
+    {
         SceneManager.LoadScene("Default theme");
     }
 }
